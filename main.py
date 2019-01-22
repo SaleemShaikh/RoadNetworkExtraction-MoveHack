@@ -77,6 +77,7 @@ def main():
 		learn.freeze_to(1)
 		learn.load(os.path.join(cwd,  args.model_dir + '/base'))
 		print ('Started Training...')
+		learn.metrics = []
 		learn.fit(args.learning_rate, args.num_epochs, cycle_len=args.cycle_len, use_clr=(20,4))
 		learn.save(os.path.join(cwd, args.model_dir + '/1024-Mnih-own'))
 
